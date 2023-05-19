@@ -66,7 +66,7 @@ public class DealershipFileManager {
 
     public void saveDealership(Dealership dealership){
         try(
-            FileWriter fileWriter = new FileWriter("Dealership.csv", true)){
+            FileWriter fileWriter = new FileWriter("Dealerships.csv", true)){
                 fileWriter.write("\n"+ 
                     dealership.getName() + "|" + dealership.getAddress() + "|" + dealership.getPhone() + "\n");
 
@@ -78,7 +78,8 @@ public class DealershipFileManager {
                     }
             }
             catch(IOException e){
-                e.printStackTrace();
+                 System.out.println("File not found!");
+                 System.exit(0);
             }
     };
     Vehicle parseVehicle(String string){
