@@ -173,7 +173,7 @@ public class UserInterface {
         Vehicle vehicle = new Vehicle(vinInput, yearInput, makeInput, modelInput, typeInput, colorInput, odometerInput, priceInput);
         dealership.addVehicle(vehicle);
         fileManager.saveDealership(dealership);
-        System.out.println(ColorCodes.TEXT_RED+"Vehicle successfully added!!"+ColorCodes.ANSI_RESET);
+        System.out.println(ColorCodes.TEXT_RED+"****Vehicle successfully added!!****"+ColorCodes.ANSI_RESET);
     }
     public void processRemoveVehicleRequest() {
         Scanner scanner = new Scanner(System.in);
@@ -185,7 +185,8 @@ public class UserInterface {
         if (v != null) {
             dealership.removeVehicle(v);
             fileManager.saveDealership(dealership);
-            System.out.println(ColorCodes.TEXT_RED+"Vehicle successfully removed!!"+ColorCodes.ANSI_RESET);
+            System.out.println(ColorCodes.TEXT_RED+"****Vehicle successfully removed!!****"+ColorCodes.ANSI_RESET);
+
         }
     }
 }
