@@ -1,9 +1,7 @@
 package org.example;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.nio.Buffer;
 import java.util.ArrayList;
 
 public class DealershipFileManager {
@@ -66,12 +64,12 @@ public class DealershipFileManager {
 
     public void saveDealership(Dealership dealership){
         try(
-            FileWriter fileWriter = new FileWriter("Dealerships.csv", true)){
-                fileWriter.write("\n"+ 
+                BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter( "Dealerships.csv", false))){
+                bufferedWriter.write(
                     dealership.getName() + "|" + dealership.getAddress() + "|" + dealership.getPhone() + "\n");
 
                     for(Vehicle v : dealership.getAllVehicles()){
-                        fileWriter.write("\n" + 
+                        bufferedWriter.write(
                         v.getVin() + "|" + v.getYear() + "|" + v.getMake() + "|" +
                         v.getModel() + "|" + v.getVehicleType() + "|" + v.getColor() + "|" + v.getOdometer()
                         + "|" + v.getPrice() + "\n");
