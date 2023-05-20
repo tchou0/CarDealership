@@ -26,9 +26,9 @@ public class UserInterface {
         Scanner scanner = new Scanner(System.in);
 
         do {
-
-            System.out.println(ColorCodes.TEXT_PURPLE+"\n=============================================== Welcome to " + dealership.getName() + "! =============================================\n"+ColorCodes.ANSI_RESET +
-                    ColorCodes.TEXT_BLUE+"\n[1] Get by Price\n" +
+            System.out.println(ColorCodes.TEXT_PURPLE+"\n*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= Welcome to " + dealership.getName() + "! =*=*=**=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*="+ColorCodes.ANSI_RESET);
+                    System.out.print(
+                     ColorCodes.TEXT_BLUE+"\n[1] Get by Price\n" +
                     "[2] Get by Make and Model\n" +
                     "[3] Get by Year\n" +
                     "[4] Get by Color\n" +
@@ -39,7 +39,7 @@ public class UserInterface {
                     "[9] Remove a Vehicle\n" +
                     "[99] Exit"+ColorCodes.ANSI_RESET);
 
-            System.out.print(ColorCodes.TEXT_YELLOW+"\nEnter your choice: "+ColorCodes.ANSI_RESET);
+            System.out.print(ColorCodes.TEXT_YELLOW+"\n\nEnter your choice: "+ColorCodes.ANSI_RESET);
             int choice = scanner.nextInt();
             switch (choice) {
                 case 1:
@@ -95,7 +95,7 @@ public class UserInterface {
 
     public void processGetByPrice() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print(ColorCodes.TEXT_RED+"\nType the min price: ");
+        System.out.print(ColorCodes.TEXT_RED+"Type the min price: ");
         int minPrice = scanner.nextInt();
         System.out.print("Type the max price: "+ColorCodes.ANSI_RESET);
         int maxPrice = scanner.nextInt();
